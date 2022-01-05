@@ -283,11 +283,16 @@ function quesSlt(a) {
     if (quesDone.length !=0) {
         let ques = Math.ceil(Math.random()*(quesDone.length)) - 1;
         setTimeout(function() {document.getElementById(`ques${quesDone[ques]}`).style.display = "block"},500);
+        
+        if (quesDone.indexOf(ques) > -1) {
+            quesDone.splice(quesDone.indexOf(ques),1);
+        }
     } else {
         let ques = Math.ciel(Math.random()*quesNum);
         setTimeout(function() {document.getElementById(`ques${ques}`).style.display = "block"},500);
-    if (quesDone.indexOf(ques) > -1) {
-        quesDone.splice(quesDone.indexOf(ques),1);
+        if (quesDone.indexOf(ques) > -1) {
+            quesDone.splice(quesDone.indexOf(ques),1);
+        }
     }
     if (a === 1) {
         quesExtra = 1;
