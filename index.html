@@ -4,7 +4,9 @@
     <title>Navigation</title>
   </head>
   <body>
-    <a href="./unit-1" id="unit1">Unit 1</a>
+    <div id="link">
+      <a href="./unit-1" id="unit1">Unit 1</a>
+    </div>
   </body>
 </html>
 
@@ -13,11 +15,18 @@
     background-color: #888888;
   }
   
+  #link {
+    position:absolute;
+    left: 4in;
+    top: 3in;
+  }
+  
   a {
     text-align: center;
     verticle-align: middle;
     border: 2px solid black;
     background-image: linear-gradient(#00ff00,#008800);
     margin: 0.5in;
+    padding: 10px;
   }
 </style>
