@@ -4,6 +4,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+*::selection {
+	background-color: #ff000088;
+}
+
 .transparent {
     background-color: transparent;
 }
