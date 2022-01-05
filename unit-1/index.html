@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Presentation de Francais</title>
+        <link rel="stylesheet" href="./processing/style.css">
+        <script src="./processing/javascript.js"></script>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    </head>
+    <body>
+		<!--Board Path-->
+		<a id="pStart" class="start"></a>
+        <a id="p1" class="norm"></a>
+        <a id="p2" class="norm"></a>
+        <a id="p3" class="norm"></a>
+        <a id="p4" class="norm"></a>
+        <a id="p5" class="spec"></a>
+        <a id="p6" class="norm"></a>
+        <a id="p7" class="norm"></a>
+        <a id="p8" class="norm"></a>
+        <a id="p9" class="norm"></a>
+        <a id="p10" class="spec"></a>
+        <a id="p11" class="norm"></a>
+        <a id="p12" class="norm"></a>
+        <a id="p13" class="norm"></a>
+        <a id="p14" class="norm"></a>
+        <a id="p15" class="spec"></a>
+        <a id="p16" class="norm"></a>
+        <a id="p17" class="norm"></a>
+        <a id="p18" class="norm"></a>
+        <a id="p19" class="norm"></a>
+        <a id="p20" class="spec"></a>
+        <a id="p21" class="norm"></a>
+        <a id="p22" class="norm"></a>
+        <a id="p23" class="norm"></a>
+        <a id="p24" class="norm"></a>
+        <a id="p25" class="spec"></a>
+        <a id="p26" class="norm"></a>
+        <a id="p27" class="norm"></a>
+        <a id="p28" class="norm"></a>
+        <a id="p29" class="norm"></a>
+        <a id="p30" class="spec"></a>
+        <a id="p31" class="norm"></a>
+        <a id="p32" class="norm"></a>
+        <a id="p33" class="norm"></a>
+        <a id="p34" class="norm"></a>
+        <a id="p35" class="spec"></a>
+        <a id="p36" class="norm"></a>
+        <a id="p37" class="norm"></a>
+        <a id="p38" class="norm"></a>
+        <a id="p39" class="norm"></a>
+        <a id="p40" class="spec"></a>
+        <a id="p41" class="norm"></a>
+        <a id="p42" class="fin"></a>
+
+        <!--Game Piece-->
+        <a id="gmPc"></a>
+
+		<!--Questions-->
+        <div id="ques1" class="disNon question">
+            <a class="sentence transparent">Comment l'Institut Diambars enseigne les sports et l'école scolaire?</a>
+            <img class="transparent" alt="image" src="images/questions/diambar.jpeg">
+            <div class="transparent">
+                <button onclick="eval(1,1)">Un jour, ils font le sport, l'autre, ils font une journée scholaire.</button><br>
+                <button onclick="eval(1,2)">Ils le font au même temps.</button><br>
+                <button onclick="eval(1,3)">Ils dévisent le jour en deux. Un est pour les études, l'autre pour le sport.</button>
+            </div>
+        </div>
+        <div id="ques2" class="disNon question">
+            <a class="sentence transparent">Pourquoi font la magorité des gens le bénévolat?</a>
+            <img class="transparent" alt="image" src="images/questions/volunteering.jpeg">
+            <div class="transparent">
+                <button onclick="eval(2,1)">95% Pour aider les gens</button><br>
+                <button onclick="eval(2,2)">90% Pour les compétences</button><br>
+                <button onclick="eval(2,3)">80% Pour le travail en équipe</button><br>
+                <button onclick="eval(2,4)">100% Pour l'épanouissement</button>
+            </div>
+        </div>
+        <div id="ques3" class="disNon question">
+            <a class="sentence transparent">C'est quoi, la différence entre la crèche et la maternelle?
+            </a>
+            <img class="transparent" alt="image" src="images/questions/kindergarten.jpeg">
+            <div class="transparent">
+                <button onclick="eval(3,1)">La crèche, c'est pour les enfants plus âgés.</button><br>
+                <button onclick="eval(3,2)">La maternelle est obligatoire, la crèche n'est pas.</button><br>
+                <button onclick="eval(3,3)">On faut payer pour aller à la maternelle.</button><br>
+                <button onclick="eval(3,4)">Les parents vont à la maternelle avec leurs enfants.</button>
+            </div>
+        </div>
+        <div id="ques4" class="disNon question">
+            <a class="sentence transparent">Où est situé l'Institut Diambars?</a>
+            <img class="transparent" alt="image" src="images/questions/diambar.jpeg">
+            <div class="transparent">
+                <button onclick="eval(4,1)">Au Kongo</button><br>
+                <button onclick="eval(4,2)">En Inde</button><br>
+                <button onclick="eval(4,3)">Au Sénégal</button><br>
+                <button onclick="eval(4,4)">En France</button>
+            </div>
+        </div>
+        <div id="ques5" class="disNon question">
+            <a class="sentence transparent">À quelle âge fini la crèche?</a>
+            <img class="transparent" alt="img" src="images/questions/age.jpeg" id="agejpeg">
+            <div class="transparent">
+                <button onclick="eval(5,1)">5</button><br>
+                <button onclick="eval(5,2)">6</button><br>
+                <button onclick="eval(5,3)">9</button><br>
+                <button onclick="eval(5,4)">3</button>
+            </div>
+        </div>
+        <div id="ques6" class="disNon question">
+            <a class="sentence transparent">Comment le governement finance l'école publique? (Maternelle, École Primaire, Collège, Licée)</a>
+            <img class="transparent" alt="image" src="./images/questions/school.jpeg">
+            <div class="transparent">
+                <button onclick="eval(6,1)">Avec les implôts</button><br>
+                <button onclick="eval(6,2)">Just avec les dons</button><br>
+                <button onclick="eval(6,3)">Il ne le finance pas</button>
+            </div>
+        </div>
+        <div id="ques7" class="disNon question">
+            <a class="sentence transparent">Faut-on être riche pour aller à l'Institut Diambars?</a>
+            <img class="transparent" alt="image" src="./images/questions/diambar.jpeg">
+            <div class="transparent">
+                <button onclick="eval(7,1)">Oui</button><br>
+                <button onclick="eval(7,2)">Non</button>
+            </div>
+        </div>
+        <div id="ques8" class="disNon question">
+            <a class="sentence transparent">Pourquoi est-il important de finir l'école?</a>
+            <img class="transparent" alt="image" src="./images/questions/school.jpeg">
+            <div class="transparent">
+                <button onclick="eval(8,1)">Car on peut vanter qu'on l'a fini.</button><br>
+                <button onclick="eval(8,2)">Car on reçois un citificat qu'on a besoin pour aller à L'Université et pour beaucoup de travails.</button><br>
+                <button onclick="eval(8,3)">Il n'y a pas de raison</button>
+            </div>
+        </div>
+        <div id="ques9" class="disNon question">
+            <a class="sentence transparent">Pourquoi donne l'État l'argent aux familles avec les enfants?</a>
+            <img class="transparent" alt="image" src="./images/questions/money.png">
+            <div class="transparent">
+                <button onclick="eval(9,1)">Pour le dépenser sur les choses amusant comme les vacances.</button><br>
+                <button onclick="eval(9,2)">Pour le dépenser sur les choses pour les parents</button><br>
+                <button onclick="eval(9,3)">Pour le dépenser sur les choses néssessaire pour les enfants (éducation, nouriture, vêtements).</button>
+            </div>
+        </div>
+        <div id="ques10" class="disNon question">
+            <a class="sentence transparent">Si on ne finirait pas l'école, que se passerait-t-il propablement <strong class="transparent">pas</strong>?</a>
+            <img class="transparent" alt="image" src="./images/questions/diploma.jpeg">
+            <div class="transparent">
+                <button onclick="eval(10,1)">On aurait un très bonne travail.</button><br>
+                <button onclick="eval(10,2)">On aurait un travail qui te donnerait pas beaucoup d'argent.</button><br>
+                <button onclick="eval(10,3)">On ne pouvrait pas aller à l'Université.</button>
+            </div>
+        </div>
+
+		<!--UI-->
+        <button onclick="roll()" id="rollBtn">Rouler</button>
+        <img id="die" src="./images/die.1.png" class="transparent">
+
+        <!-- Answer Feedback -->
+        <a id="correct" class="feedback disNon">Correct!</a>
+        <a id="incorrect" class="feedback disNon">Incorrect!</a>
+        <a id="another" class="feedback disNon">Une Autre!</a>
+        <a id="fin" class="feedback disNon">FIN!</a>
+
+        <button id="dataBtn" onclick="alert(quesDone)">Infos</button>
+    </body>
+</html>
