@@ -1,11 +1,12 @@
 let pos = 0
-let quesNum = 10
+let quesNum = 11
 let quesExtra = 0
 let answerOffDel = 1000
 let tileNum = 42
 let rollLock = 0
 let offsetX = 35 //.__
 let offsetY = 35 //.__
+let seenAll = 0
 
 let quesDone = []
 
@@ -280,10 +281,20 @@ function roll() {
 }
 
 function quesSlt(a) {
-    let ques = Math.ceil(Math.random()*quesNum);
-    setTimeout(function() {document.getElementById(`ques${ques}`).style.display = "block"},500);
-    if (quesDone.indexOf(ques) > -1) {
+    if (quesDone.length !=0) {
+        let ques = quesDone[Math.floor(Math.random() * quesDone.length)];
+
+        setTimeout(function() {document.getElementById(`ques${ques}`).style.display = "block"},500);
         quesDone.splice(quesDone.indexOf(ques),1);
+    } else {
+        for (let l = 1; l < quesNum + 1; l++) {
+            quesDone.push(l);
+        }
+
+        quesSlt(a);
+        seenAll = 1;
+
+        document.getElementById("dataBtn").style.backgroundImage = "linear-gradient(#00ff00,#008800)";
     }
     if (a === 1) {
         quesExtra = 1;
@@ -404,6 +415,17 @@ function eval(qNum,res) {
             incorrect.style.display = "block";
             setTimeout(function() {incorrect.style.display = "none"}, answerOffDel);
         }
+    } else if (qNum === 11) {
+        if (res === 2) {
+            correct.style.display = "block";
+            ques.style.display = "none";
+            setTimeout(function() {correct.style.display = "none"}, answerOffDel);
+            rollLock = 0
+            quesEx();
+        } else {
+            incorrect.style.display = "block";
+            setTimeout(function() {incorrect.style.display = "none"}, answerOffDel);
+        }
     }
 }
 
@@ -421,9 +443,11 @@ function quesEx() {
 }
 
 function end() {
-    let length = quesDone.length;
-    for (let l = 0; l < length; l++) {
-        document.getElementById(`ques${quesDone[0]}`).style.display = "block";
-        quesDone.splice(0,1);
+    if (seenAll != 1) {
+        let length = quesDone.length;
+        for (let l = 0; l < length; l++) {
+            document.getElementById(`ques${quesDone[0]}`).style.display = "block";
+            quesDone.splice(0,1);
+        }
     }
 }
