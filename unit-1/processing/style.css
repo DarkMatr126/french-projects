@@ -80,6 +80,16 @@
     top: 1in;
 }
 
+.super {
+    vertical-align: super;
+    font-size: small;
+}
+
+#soccer {
+    height: 2.7in;
+    width: 2.7in;
+}
+
 .sentence {
     font-size: 30px;
 }
