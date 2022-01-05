@@ -280,6 +280,7 @@ function roll() {
 }
 
 function quesSlt(a) {
+    alet(quesDon.length);
     if (quesDone.length !=0) {
         let ques = Math.ceil(Math.random()*(quesDone.length)) - 1;
         setTimeout(function() {document.getElementById(`ques${quesDone[ques]}`).style.display = "block"},500);
