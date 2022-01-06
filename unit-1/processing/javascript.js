@@ -1,5 +1,5 @@
 let pos = 0
-let quesNum = 11
+let quesNum = 13
 let quesExtra = 0
 let answerOffDel = 1000
 let tileNum = 42
@@ -9,6 +9,8 @@ let offsetY = 35 //.__
 let seenAll = 0
 
 let quesDone = []
+
+let quesSeen = []
 
 for (let l = 1; l < quesNum + 1; l++) {
     quesDone.push(l);
@@ -271,6 +273,7 @@ function roll() {
                     piece.style.left = `${endX}in`;
                     piece.style.top = `${endY}in`;
                     fin.style.display = "block";
+                    pos = 42;
                     setTimeout(function(){fin.style.display = "none"}, answerOffDel);
                     end()
                 } else {
@@ -283,12 +286,20 @@ function roll() {
 function quesSlt(a) {
     if (quesDone.length !=0) {
         let ques = quesDone[Math.floor(Math.random() * quesDone.length)];
+        
+        if (quesSeen.indexOf(ques) === -1) {
+            setTimeout(function() {document.getElementById(`ques${ques}`).style.display = "block"},500);
+            quesDone.splice(quesDone.indexOf(ques),1);
 
-        setTimeout(function() {document.getElementById(`ques${ques}`).style.display = "block"},500);
-        quesDone.splice(quesDone.indexOf(ques),1);
+            quesSeen.push(ques);
+        } else {
+            quesSlt(a);
+        }
     } else {
         for (let l = 1; l < quesNum + 1; l++) {
             quesDone.push(l);
+
+            quesSeen = [];
         }
 
         quesSlt(a);
@@ -426,6 +437,28 @@ function eval(qNum,res) {
             incorrect.style.display = "block";
             setTimeout(function() {incorrect.style.display = "none"}, answerOffDel);
         }
+    } else if (qNum === 12) {
+        if (res === 2) {
+            correct.style.display = "block";
+            ques.style.display = "none";
+            setTimeout(function() {correct.style.display = "none"}, answerOffDel);
+            rollLock = 0
+            quesEx();
+        } else {
+            incorrect.style.display = "block";
+            setTimeout(function() {incorrect.style.display = "none"}, answerOffDel);
+        }
+    } else if (qNum === 13) {
+        if (res === 4) {
+            correct.style.display = "block";
+            ques.style.display = "none";
+            setTimeout(function() {correct.style.display = "none"}, answerOffDel);
+            rollLock = 0
+            quesEx();
+        } else {
+            incorrect.style.display = "block";
+            setTimeout(function() {incorrect.style.display = "none"}, answerOffDel);
+        }
     }
 }
 
@@ -451,3 +484,9 @@ function end() {
         }
     }
 }
+
+window.addEventListener("keydown", function(event) {
+    if (event.which === 13) {
+        roll();
+    }
+})
